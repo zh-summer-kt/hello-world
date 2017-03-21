@@ -1,0 +1,15 @@
+from PIL import Image, ImageDraw, ImageFont
+import random
+
+msgNum=str(random.randint(1,99))
+
+im=Image.open('kt.png')
+w,h=im.size
+wDraw=0.8*w
+hDraw=0.08*w
+
+font=ImageFont.truetype('/usr/share/fonts/truetype/droid/DroidSans.ttf',30)
+draw=ImageDraw.Draw(im)
+draw.text((wDraw,hDraw),msgNum,font=font,fill=(255,33,33))
+
+im.save('kt_mgs.png','png')
